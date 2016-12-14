@@ -32,7 +32,7 @@
                  [mysql/mysql-connector-java "5.1.6"]
                  [org.webjars/webjars-locator-jboss-vfs "0.1.0"]
                  [luminus-immutant "0.2.0"]
-                 [re-com "1.2.0"]
+                 [re-com "1.1.0"]
                  [org.clojure/core.async "0.2.391"]]
 
   :min-lein-version "2.0.0"

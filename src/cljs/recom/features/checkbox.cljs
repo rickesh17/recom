@@ -1,6 +1,7 @@
 (ns recom.features.checkbox
   (:require [re-com.core   :refer [h-box v-box box gap line checkbox label p]]
             [re-com.misc   :refer [checkbox-args-desc]]
+            [recom.features.utils :refer [panel-title title2 args-table github-hyperlink status-text]]
             [reagent.core  :as    reagent]))
 
 (defn right-arrow
@@ -34,21 +35,9 @@
       [v-box
        :size     "auto"
        :gap      "10px"
-       :children [[panel-title "[checkbox ... ]"
-                   "src/re_com/misc.cljs"
-                   "src/re_demo/checkbox.cljs"]
-
-                  [h-box
+       :children [[h-box
                    :gap      "100px"
                    :children [[v-box
-                               :gap      "10px"
-                               :width    "450px"
-                               :children [[title2 "Notes"]
-                                          [status-text "Stable"]
-                                          [p "A boostrap-styled checkbox, with optional label (always displayed to the right)."]
-                                          [p "Clicking on the label is the same as clicking on the checkbox."]
-                                          [args-table checkbox-args-desc]]]
-                              [v-box
                                :gap      "10px"
                                :children [[title2 "Demo"]
                                           [v-box
@@ -64,7 +53,7 @@
                                                                   (when @ticked? [label :label " is ticked"])]]
 
                                                       [h-box
-                                                       :gap      "1px"
+                                                       :gap      "10px"
                                                        :children [[checkbox  :model all-for-one? :on-change #(reset! all-for-one? %)]
                                                                   [checkbox  :model all-for-one? :on-change #(reset! all-for-one? %)]
                                                                   [checkbox  :model all-for-one? :on-change #(reset! all-for-one? %)  :label  "all for one, and one for all.  "]]]
