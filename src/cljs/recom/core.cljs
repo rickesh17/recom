@@ -7,7 +7,8 @@
             [markdown.core :refer [md->html]]
             [recom.ajax :refer [load-interceptors!]]
             [ajax.core :refer [GET POST]]
-            [recom.features.checkbox :as checkbox])
+            [recom.features.checkbox :as checkbox]
+            [recom.features.dropdowns :as dropdowns])
   (:import goog.History))
 
 (defn nav-link [uri title page collapsed?]
@@ -38,7 +39,7 @@
 
 (defn home-page []
   [:div.container
-   [checkbox/panel]
+   [dropdowns/panel]
    ])
 
 (def pages
